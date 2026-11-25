@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FORMULA WORLD: noticias, análisis y actualidad del automovilismo.">
+<title>FORMULA WORLD | Motorsport News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e10600;--black:#101010;--ink:#191919;--muted:#777;--line:#dedede;--paper:#f3f3f3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff}
+header{background:var(--black);color:#fff}
+.topline{padding:10px 7%;display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #333;color:#aaa;font-size:10px;letter-spacing:1.2px}
+.masthead{padding:23px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font:900 clamp(37px,5vw,56px)/.9 'Barlow Condensed',sans-serif;letter-spacing:-1.8px}
+.logo span,footer .logo span{color:var(--red)}
+.tagline{font-size:9px;letter-spacing:4px;color:#aaa;margin-top:8px}
+.edition{text-align:right;color:#aaa;font-size:10px;line-height:1.8;letter-spacing:.5px}
+nav{background:var(--red);padding:0 7%;display:flex;gap:30px;overflow-x:auto}
+nav a{color:#fff;text-decoration:none;padding:14px 0;font-size:10px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+nav a:hover{opacity:.7}
+.ticker{background:#eee;padding:12px 7%;font-size:11px;display:flex;gap:13px;align-items:center}
+.ticker strong{color:var(--red);letter-spacing:1px;white-space:nowrap}
+main{max-width:1280px;margin:auto;padding:38px 25px}
+.section-title{font:800 25px 'Barlow Condensed',sans-serif;text-transform:uppercase;border-left:5px solid var(--red);padding-left:12px;margin-bottom:22px}
+.lead{position:relative;overflow:hidden;background:#111;color:#fff}
+.lead img{display:block;width:100%;height:clamp(290px,48vw,590px);object-fit:cover;object-position:center}
+.lead-shade{position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.88));pointer-events:none}
+.lead-caption{position:absolute;left:clamp(18px,4vw,48px);right:clamp(18px,4vw,48px);bottom:clamp(20px,4vw,42px);z-index:1}
+.kicker{display:inline-block;background:var(--red);color:white;padding:6px 10px;font-size:9px;font-weight:800;letter-spacing:1.2px;margin-bottom:12px}
+.lead-caption h1{font:900 clamp(34px,5.7vw,68px)/.94 'Barlow Condensed',sans-serif;text-transform:uppercase;max-width:850px;text-shadow:0 2px 12px #0008}
+.lead-caption p{font-size:12px;color:#eee;margin-top:12px;letter-spacing:.3px}
+.lead-caption a{color:#fff;text-decoration:none}
+.lead-caption a:hover{text-decoration:underline}
+.intro{display:grid;grid-template-columns:1.3fr .7fr;gap:34px;padding:28px 0 38px;border-bottom:1px solid var(--line)}
+.category{color:var(--red);font-size:10px;font-weight:800;letter-spacing:1.7px;margin-bottom:12px}
+.intro h2{font:800 39px/1.02 'Barlow Condensed',sans-serif;text-transform:uppercase;margin-bottom:13px}
+.intro p{font-size:13px;line-height:1.8;color:#555;margin-bottom:10px}
+.byline{font-size:10px;color:#888;margin-top:15px}
+.read{display:inline-block;background:#111;color:#fff;text-decoration:none;padding:13px 20px;font-size:10px;font-weight:800;letter-spacing:.8px;margin-top:12px}
+.read:hover{background:var(--red)}
+.content-grid{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:42px;margin-top:42px}
+.article{max-width:850px}
+.article-head{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:25px}
+.article-head h2{font:900 clamp(40px,5vw,58px)/.96 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:10px 0 14px}
+.subtitle{font-size:15px;line-height:1.65;color:#666}
+.article-meta{font-size:10px;color:#888;margin-top:17px}
+.article-body{font-size:14px;line-height:1.95;color:#333}
+.article-body p{margin-bottom:19px}
+.article-body h3{font:800 29px 'Barlow Condensed',sans-serif;text-transform:uppercase;color:#111;margin:34px 0 12px}
+.article-body strong{color:#111}
+.pullquote{border-left:5px solid var(--red);background:var(--paper);padding:20px 23px;font-size:17px;font-weight:700;line-height:1.55;margin:27px 0}
+.drivers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:25px 0}
+.driver{background:#151515;color:#fff;padding:22px;border-bottom:4px solid var(--red)}
+.driver .nationality{font-size:10px;color:#bbb;letter-spacing:1.5px}
+.driver h4{font:800 29px 'Barlow Condensed',sans-serif;text-transform:uppercase;margin:8px 0}
+.driver p{font-size:12px;line-height:1.7;color:#ccc;margin:0}
+.driver .note{font-size:9px;color:#ff625c;font-weight:800;letter-spacing:.8px;margin-top:12px}
+.notice{background:#fff0ef;border:1px solid #ffd0ce;padding:19px 21px;margin:25px 0}
+.notice strong{color:var(--red);font-size:11px;letter-spacing:.5px}
+.notice p{margin:8px 0 0}
+.editorial{background:#111;color:#fff;padding:23px;margin:30px 0}
+.editorial .category{color:#ff615b}
+.editorial h3{color:#fff;margin-top:0}
+.editorial p{color:#ddd}
+.sidebar{background:#f3f3f3;padding:22px;height:fit-content}
+.sidebar h3{font:800 25px 'Barlow Condensed',sans-serif;text-transform:uppercase;border-bottom:3px solid var(--red);padding-bottom:10px;margin-bottom:13px}
+.side-item{padding:14px 0;border-bottom:1px solid #ddd;font-size:12px;font-weight:700;line-height:1.55}
+.side-item span{display:block;color:var(--red);font-size:9px;letter-spacing:1px;margin-bottom:5px}
+.sidebar .small-copy{font-size:12px;line-height:1.8;color:#555}
+footer{background:#101010;color:#aaa;text-align:center;padding:34px 15px;margin-top:55px;font-size:10px;line-height:2}
+footer .logo{font-size:32px;color:#fff;margin-bottom:7px}
+@media(max-width:850px){.intro,.content-grid{grid-template-columns:1fr}.sidebar{margin-top:0}.lead img{height:390px}}
+@media(max-width:560px){main{padding:25px 15px}.topline{font-size:8px;padding:9px 5%}.masthead{padding:20px 5%}.edition{font-size:8px}.logo{font-size:40px}.tagline{letter-spacing:2px}nav{padding:0 5%;gap:22px}.lead img{height:330px}.lead-caption h1{font-size:39px}.intro h2{font-size:33px}.drivers{grid-template-columns:1fr}.article-head h2{font-size:43px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="topline"><span>THE WORLD OF MOTORSPORT</span><span>MIÉRCOLES 25 DE NOVIEMBRE DE 2026</span></div>
+  <div class="masthead">
+    <div><div class="logo">FORMULA<span>WORLD</span></div><div class="tagline">BEYOND THE FINISH LINE.</div></div>
+    <div class="edition">EDICIÓN DIGITAL<br>25.11.2026 · 14:00 ART</div>
+  </div>
+  <nav>
+    <a href="#">INICIO</a><a href="#noticia">ÚLTIMA HORA</a><a href="#pilotos">FÓRMULA 2</a><a href="#qatar">CALENDARIO</a><a href="#editorial">OPINIÓN</a>
+  </nav>
+</header>
+
+<div class="ticker"><strong>ÚLTIMA HORA</strong><span>Ferrari sorprende con dos pilotos de reserva que no habían sido presentados públicamente.</span></div>
+
+<main>
+  <div class="section-title">PORTADA / NOTICIA DESTACADA</div>
+
+  <section class="lead" aria-label="Fotografía principal de la noticia">
+    <img src="portada-ferrari.png" alt="Dos monoplazas rojos de Ferrari circulando juntos en pista">
+    <div class="lead-shade"></div>
+    <div class="lead-caption">
+      <span class="kicker">EXCLUSIVO · FERRARI</span>
+      <h1><a href="#noticia">Dos pilotos desconocidos, un mismo destino: Ferrari</a></h1>
+      <p>BAZTARRICA Y MACCAGNANI, LOS RESERVAS QUE MARANELLO NUNCA PRESENTÓ.</p>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div>
+      <div class="category">FERRARI · FÓRMULA 2 · MERCADO DE PILOTOS</div>
+      <h2>La Scuderia sorprende con dos reservas que nadie sabía que tenía</h2>
+      <p>El argentino Santiago Baztarrica y el italiano Niccolò Maccagnani conducirán los monoplazas de Ferrari durante las prácticas de los próximos compromisos en Qatar y Abu Dhabi.</p>
+      <p>Uno llega tras su paso por Mercedes. El otro, después de competir en Fórmula 4. Ninguno había sido presentado oficialmente como parte de la estructura de Maranello.</p>
+      <div class="byline">25 NOVIEMBRE 2026 · 14:00 ART · REDACCIÓN FORMULA WORLD</div>
+      <a class="read" href="#noticia">LEER NOTICIA COMPLETA →</a>
+    </div>
+    <div>
+      <div class="category">EL DATO</div>
+      <h2 style="font-size:30px">Dos trayectorias, una misma incógnita</h2>
+      <p><strong>Baztarrica:</strong> su salida de Mercedes no fue comunicada públicamente.</p>
+      <p><strong>Maccagnani:</strong> pasa de competir en Fórmula 4 a recibir una oportunidad en un monoplaza de Fórmula 2.</p>
+    </div>
+  </section>
+
+  <div class="content-grid">
+    <article class="article" id="noticia">
+      <div class="article-head">
+        <div class="category">FERRARI / MOVIMIENTOS INTERNOS</div>
+        <h2>Ferrari presenta a dos pilotos de reserva que nunca anunció: un argentino y un italiano, protagonistas de una decisión inesperada</h2>
+        <p class="subtitle">La escudería utilizará a Santiago Baztarrica y Niccolò Maccagnani en las prácticas de Fórmula 2 de los próximos compromisos en Medio Oriente. La noticia no solo sorprende por los nombres elegidos, sino también por el desconocimiento que existía sobre su vinculación con Maranello.</p>
+        <div class="article-meta">POR REDACCIÓN FORMULA WORLD · 25 DE NOVIEMBRE DE 2026 · 14:00 ART</div>
+      </div>
+
+      <div class="article-body">
+        <p>Ferrari volvió a sacudir el paddock, aunque esta vez no fue por una actualización técnica ni por un movimiento dentro de su alineación titular. La escudería italiana confirmó una decisión que dejó más preguntas que respuestas: sus dos monoplazas de Fórmula 2 estarán en manos de pilotos de reserva durante las prácticas de los próximos fines de semana de Qatar y Abu Dhabi.</p>
+        <p>Los nombres elegidos son <strong>Santiago Baztarrica, argentino con pasado reciente en Mercedes, y Niccolò Maccagnani, piloto italiano que hasta ahora desarrollaba su carrera en Fórmula 4.</strong> Dos trayectorias muy diferentes, pero un mismo punto en común: hasta este anuncio, ninguno había sido presentado públicamente como integrante del programa de reservas de Ferrari.</p>
+
+        <div class="pullquote">La sorpresa no está únicamente en quiénes conducirán los autos, sino en descubrir que Ferrari aparentemente tenía dos pilotos de reserva cuya existencia dentro de la estructura no había sido comunicada.</div>
+
+        <h3>Una estructura de reservas que aparece de la nada</h3>
+        <p>La confirmación tomó por sorpresa a buena parte del ambiente del automovilismo. No hubo presentaciones, fotografías oficiales, anuncios en redes sociales ni comunicados previos que permitieran anticipar la incorporación de los dos pilotos.</p>
+        <p>La decisión contempla que ambos participen de las sesiones de prácticas de Fórmula 2 en el marco de los Grandes Premios de Qatar y Abu Dhabi. Según la explicación del equipo, se trata de una reorganización de actividades: los pilotos titulares pasarán el menor tiempo posible en el circuito, mientras los reservas asumirán parte del trabajo previsto.</p>
+        <p>Sin embargo, el anuncio abrió un interrogante mucho más grande: ¿desde cuándo forman parte de Ferrari estos dos pilotos y por qué no se había informado nada al respecto?</p>
+
+        <h3>Santiago Baztarrica: de Mercedes a Ferrari sin escalas públicas</h3>
+        <p>El primer nombre que generó repercusión fue el del <strong>argentino Santiago Baztarrica</strong>. Su convocatoria representa una de las apariciones más inesperadas del anuncio, especialmente por su vínculo anterior con Mercedes.</p>
+        <p>Hasta hace relativamente poco, Baztarrica estaba relacionado con la estructura de jóvenes pilotos de la marca alemana. No obstante, su aparición con Ferrari plantea una incógnita que todavía no tiene respuesta: no se conoce la fecha exacta de su salida de Mercedes ni las condiciones en las que se habría producido su incorporación a Maranello.</p>
+        <p>Tampoco hubo, hasta el momento, un comunicado oficial de Mercedes que confirmara su desvinculación, ni una presentación de Ferrari que explicara cuándo comenzó la relación entre ambas partes.</p>
+        <p>Su debut con los colores de la Scuderia será, por lo tanto, una oportunidad deportiva y también una presentación pública inesperada.</p>
+
+        <h3>Niccolò Maccagnani: de Fórmula 4 a una oportunidad en F2</h3>
+        <p>Si la situación de Baztarrica ya resulta llamativa, el caso de <strong>Niccolò Maccagnani</strong> agrega todavía más interrogantes.</p>
+        <p>El italiano venía desarrollando su carrera deportiva en Fórmula 4, una de las primeras categorías de formación dentro del camino hacia el automovilismo profesional. Su nombre no había aparecido entre los pilotos públicamente vinculados al programa de Ferrari y tampoco existían indicios de una incorporación a su estructura.</p>
+        <p>Ahora, prácticamente sin escalas públicas intermedias, Maccagnani aparece convocado para conducir un monoplaza de Fórmula 2. El salto resulta especialmente significativo por la diferencia de exigencia técnica y deportiva entre ambas categorías.</p>
+        <p>Su participación despierta dudas sobre el trabajo que Ferrari podría haber estado realizando en privado con el joven italiano. ¿Se trata de una apuesta a largo plazo? ¿Hubo un proceso de evaluación que nunca trascendió? ¿O estamos ante una oportunidad puntual?</p>
+
+        <div class="drivers" id="pilotos">
+          <div class="driver"><div class="nationality">🇦🇷 ARGENTINA · RESERVA</div><h4>Santiago Baztarrica</h4><p>Anteriormente vinculado a Mercedes. Su incorporación a Ferrari no había sido anunciada públicamente.</p><div class="note">PRIMERA APARICIÓN CON FERRARI</div></div>
+          <div class="driver"><div class="nationality">🇮🇹 ITALIA · RESERVA</div><h4>Niccolò Maccagnani</h4><p>Procedente de Fórmula 4. Su convocatoria a un programa de Fórmula 2 representa un salto inesperado.</p><div class="note">SALTO DE CATEGORÍA</div></div>
+        </div>
+
+        <h3>Prácticas sin transmisión: Ferrari apuesta por el hermetismo</h3>
+        <p>Como si la falta de información sobre sus pilotos no fuera suficiente, Ferrari también confirmó que las sesiones de prácticas no contarán con transmisión audiovisual en directo.</p>
+        <p>La medida impedirá que los aficionados puedan seguir el desempeño de Baztarrica y Maccagnani en tiempo real. Tampoco se confirmó la publicación posterior de imágenes completas de las jornadas.</p>
+        <p>La escudería no brindó una explicación detallada sobre esta decisión. Desde FORMULA WORLD consideramos que podría existir una intención de limitar la exposición pública de las sesiones, especialmente ante la posibilidad de incidentes o situaciones de riesgo que, de producirse, quedarían fuera de una transmisión en vivo.</p>
+        <div class="notice"><strong>IMPORTANTE | LAS PRÁCTICAS NO SERÁN TRANSMITIDAS</strong><p>Las sesiones de los pilotos de reserva en Qatar y Abu Dhabi no tendrán cobertura en directo. Ferrari no confirmó si difundirá registros audiovisuales una vez finalizadas las actividades.</p></div>
+
+        <h3 id="qatar">Qatar y Abu Dhabi: dos fines de semana bajo la lupa</h3>
+        <p>El movimiento llega justo antes de dos compromisos consecutivos que marcarán el cierre de la temporada. El Gran Premio de Qatar está previsto para el 27 al 29 de noviembre, mientras que Abu Dhabi recibirá a la categoría del 4 al 6 de diciembre.</p>
+        <p>Con ambos escenarios como protagonistas, Ferrari tendrá la oportunidad de evaluar a dos pilotos que, hasta ahora, permanecían fuera del radar público. La decisión de darles pista podría ser una estrategia interna de organización, aunque tampoco se puede descartar que forme parte de un proyecto de desarrollo más amplio.</p>
+
+        <div class="editorial" id="editorial">
+          <div class="category">ANÁLISIS / EDITORIAL FORMULA WORLD</div>
+          <h3>Demasiadas preguntas para un anuncio tan importante</h3>
+          <p>En el automovilismo profesional, los programas de jóvenes pilotos y las estructuras de reserva suelen tener una comunicación relativamente clara. Por eso, resulta difícil ignorar que dos nombres aparezcan repentinamente asociados a una de las escuderías más importantes del mundo.</p>
+          <p>El caso de Baztarrica obliga a preguntarse qué ocurrió con Mercedes y cuándo se produjo el cambio. El de Maccagnani, por su parte, plantea dudas sobre los criterios deportivos que llevaron a un piloto de Fórmula 4 a recibir una oportunidad de este nivel.</p>
+          <p>La ausencia de transmisiones tampoco ayuda a despejar el panorama. Ferrari tiene derecho a organizar sus actividades internas, pero el silencio alrededor de esta convocatoria deja un escenario abierto a todo tipo de especulaciones.</p>
+          <p>Quizás estemos ante dos apuestas de futuro. O quizás haya una historia mucho más grande detrás de este anuncio. Por ahora, Maranello tiene la palabra.</p>
+        </div>
+        <p><strong>Una cosa es segura: Santiago Baztarrica y Niccolò Maccagnani estarán bajo los reflectores, incluso si sus prácticas no pueden verse. FORMULA WORLD seguirá de cerca cada novedad sobre esta inesperada aparición de Ferrari.</strong></p>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <h3>LO MÁS LEÍDO</h3>
+      <div class="side-item"><span>01 / FERRARI</span>Dos reservas que nadie sabía que tenía Maranello.</div>
+      <div class="side-item"><span>02 / ARGENTINA</span>Baztarrica: el misterioso paso de Mercedes a Ferrari.</div>
+      <div class="side-item"><span>03 / ITALIA</span>Maccagnani: de Fórmula 4 a una oportunidad en F2.</div>
+      <div class="side-item"><span>04 / ACTUALIDAD</span>Ferrari no transmitirá las sesiones de prácticas.</div>
+      <h3 style="margin-top:30px">PRÓXIMAS CARRERAS</h3>
+      <div class="side-item"><span>ROUND 22</span>Qatar Grand Prix<br>27 — 29 NOVIEMBRE</div>
+      <div class="side-item"><span>ROUND 23</span>Abu Dhabi Grand Prix<br>04 — 06 DICIEMBRE</div>
+      <h3 style="margin-top:30px">EN FOCO</h3>
+      <p class="small-copy">Dos incorporaciones sin presentación oficial. Un cambio de equipo sin explicación y un salto de categoría inesperado. Ferrari vuelve a generar preguntas en el paddock.</p>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="logo">FORMULA<span>WORLD</span></div>
+  <p>BEYOND THE FINISH LINE.</p>
+  <p>© 2026 FORMULA WORLD · MEDIO DIGITAL INDEPENDIENTE DE AUTOMOVILISMO.</p>
+  <p>Universo editorial ficticio.</p>
+</footer>
+</body>
+</html>
